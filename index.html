@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TODO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>TODO</h1>
+      <button id="theme-toggle" class="icon-btn" title="테마 전환" aria-label="테마 전환">
+        <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+    </header>
+
+    <form id="add-form" class="add-form" autocomplete="off">
+      <input id="new-todo" type="text" placeholder="할 일을 입력하세요..." maxlength="200" required>
+      <select id="new-priority" title="우선순위">
+        <option value="low">낮음</option>
+        <option value="medium" selected>보통</option>
+        <option value="high">높음</option>
+      </select>
+      <input id="new-due" type="date" title="마감일">
+      <button type="submit" class="add-btn">추가</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="active">진행중</button>
+        <button class="filter-btn" data-filter="completed">완료</button>
+      </div>
+      <input id="search" type="search" placeholder="검색..." class="search-input">
+    </div>
+
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <p id="empty-state" class="empty-state" hidden>할 일이 없습니다. 위에서 새로 추가해보세요 ✨</p>
+
+    <footer class="app-footer">
+      <span id="items-left">0개 남음</span>
+      <button id="clear-completed" class="link-btn">완료된 항목 삭제</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
